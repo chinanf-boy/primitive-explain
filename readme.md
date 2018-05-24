@@ -246,7 +246,7 @@ func main() {
 
 #### 4.1 读和重设图片
 
-- [ ] [LoadImage](./util.md#loadimage)
+- [x] [LoadImage](./util.md#loadimage)
 
 ``` go
 	// read input image
