@@ -54,7 +54,7 @@ primitive -i in.png -o out.png -n 100 -v
 
 ### main.go-import
 
-导入
+__1.__ 导入
 
 <details>
 
@@ -62,19 +62,19 @@ primitive -i in.png -o out.png -n 100 -v
 package main
 
 import (
-	"flag"
-	"fmt"
-	"log"
-	"math/rand"
-	"os"
-	"path/filepath"
-	"runtime"
-	"strconv"
+	"flag" // 命令行
+	"fmt" // 输出
+	"log" // 日志
+	"math/rand" // 随机
+	"os" // 平台
+	"path/filepath" // 文件路径
+	"runtime" // 运行-cpu数
+	"strconv" // 字符串格式
 	"strings"
 	"time"
 
 	"github.com/fogleman/primitive/primitive"
-	"github.com/nfnt/resize"
+	"github.com/nfnt/resize" // 纯golang图像调整大小
 )
 
 ```
@@ -83,7 +83,7 @@ import (
 
 ### main.go-var
 
-定义
+__2.__ 定义类型
 
 <details>
 
@@ -144,11 +144,13 @@ func (i *shapeConfigArray) Set(value string) error {
 primitive-explain -n 100
 ```
 
+
+
 </details>
 
 ### main.go-init
 
-初始化 命令选项
+__3.__ 初始化 命令选项
 
 ``` go
 func init() {
@@ -181,14 +183,18 @@ func check(err error) { // 错误检查
 
 ```
 
+> init 总在 main 之前运行
+
+---
+
 ### main.go-main
 
-重头戏
+__4.__ 重头戏
 
 ```go
 func main() {
 	// parse and validate arguments
-	flag.Parse()
+	flag.Parse() // 解析命令行
 	ok := true
 	if Input == "" {
 		ok = errorMessage("ERROR: input argument required")
@@ -232,12 +238,13 @@ func main() {
 	}
 ```
 
-- [ ] [primitive 日志等级](./log.md)
+- [x] [primitive 日志等级](./log.md)
 
+> 通过简单的比大小, 确定此输出信息是否被显示
 
 ---
 
-#### 读和重设图片
+#### 4.1 读和重设图片
 
 - [ ] [LoadImage](./util.md#loadimage)
 
@@ -260,7 +267,7 @@ func main() {
 
 ---
 
-#### 确定背景颜色
+#### 4.2 确定背景颜色
 
 - [ ] [MakeColor](./color.md#makecolor)
 
@@ -277,7 +284,7 @@ func main() {
     
 ```
 
-#### 算法
+#### 4.3 算法
 
 
 
@@ -313,7 +320,7 @@ func main() {
 
 ---
 
-#### 每次一个形状写入图片
+#### 4.4 每次一个形状写入图片
 
 1. 确定 输出文件的路径
 
