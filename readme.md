@@ -248,8 +248,6 @@ func main() {
 
 - [ ] [LoadImage](./util.md#loadimage)
 
-- [ ] resize
-
 ``` go
 	// read input image
 	primitive.Log(1, "reading %s\n", Input)
@@ -263,6 +261,10 @@ func main() {
 	}
 
 ```
+
+- [x] resize
+
+> https://github.com/nfnt/resize
 
 
 ---
