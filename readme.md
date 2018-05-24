@@ -271,9 +271,9 @@ func main() {
 
 #### 4.2 确定背景颜色
 
-- [ ] [MakeColor](./color.md#makecolor)
+- [x] [MakeColor](./color.md#makecolor)
 
-- [ ] [MakeHexColor](./color.md#makehexcolor)
+- [x] [MakeHexColor](./color.md#makehexcolor)
 
 ``` go
 	// determine background color
@@ -285,6 +285,10 @@ func main() {
     }
     
 ```
+
+- [x] [averageimagecolor](./util.md#averageimagecolor)
+
+---
 
 #### 4.3 算法
 
