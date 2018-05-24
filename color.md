@@ -4,6 +4,8 @@
 
 拿到颜色的数字集
 
+### Color-结构
+
 ``` go
 type Color struct {
 	R, G, B, A int
@@ -78,6 +80,12 @@ func MakeHexColor(x string) Color {
 ```
 
 ### NRGBA
+
+``` go
+// model.go 使用
+	model.Current = uniformRGBA(target.Bounds(), background.NRGBA())
+
+```
 
 ``` go
 func (c *Color) NRGBA() color.NRGBA {
