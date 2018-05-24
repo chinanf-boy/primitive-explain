@@ -74,7 +74,7 @@ func NewModel(target image.Image, background Color, size, numWorkers int) *Model
 > 颜色换个图片
  
 
-- [ ] [differenceFull]()
+- [ ] [differenceFull](./core.md#differencefull)
 
 - [x] [model.newContext](#newcontext)
 
