@@ -88,7 +88,7 @@ func imageToRGBA(src image.Image) *image.RGBA {
 
 ### uniformRGBA
 
-颜色换图片
+原图片颜色, 再涂上 背景色
 
 ``` go
 func uniformRGBA(r image.Rectangle, c color.Color) *image.RGBA {

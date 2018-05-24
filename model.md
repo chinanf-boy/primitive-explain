@@ -51,7 +51,7 @@ func NewModel(target image.Image, background Color, size, numWorkers int) *Model
 	model.Sh = sh // 高
 	model.Scale = scale // 比例
 	model.Background = background // 背景颜色
-	model.Target = imageToRGBA(target) // 获得个颜色
+	model.Target = imageToRGBA(target) // 获得整个图片变成颜色集
 	model.Current = uniformRGBA(target.Bounds(), background.NRGBA()) // 混合
 	model.Score = differenceFull(model.Target, model.Current) // 差多少
 	model.Context = model.newContext() // 拿到 画画 的形状
@@ -71,10 +71,12 @@ func NewModel(target image.Image, background Color, size, numWorkers int) *Model
 
 - [x] [uniformRGBA](./util.md#uniformrgba)
 
-> 颜色换个图片
+> 原图片颜色, 再涂上 背景色
  
 
-- [ ] [differenceFull](./core.md#differencefull)
+- [x] [differenceFull](./core.md#differencefull)
+
+> 差了多少 百分比
 
 - [x] [model.newContext](#newcontext)
 

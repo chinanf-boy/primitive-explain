@@ -11,6 +11,9 @@ Explanation
 
 [中文](./readme.md) | ~~[english](./readme.en.md)~~
 
+
+> 如果你想要运行例子, 需要下载到 `GOPATH`, 命令行不会自动生成
+
 ---
 
 使用

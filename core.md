@@ -82,10 +82,14 @@ func drawLines(im *image.RGBA, c Color, lines []Scanline) {
 
 ### differenceFull
 
+每个颜色有4个值, 每个值的比/全部值的数量, 再开根号, 再 `/255`
+
+你可以理解, 到底差了多少 百分比
+
 ``` go
 
 func differenceFull(a, b *image.RGBA) float64 {
-	size := a.Bounds().Size()
+	size := a.Bounds().Size() // a 原颜色集
 	w, h := size.X, size.Y
 	var total uint64
 	for y := 0; y < h; y++ {
@@ -95,19 +99,23 @@ func differenceFull(a, b *image.RGBA) float64 {
 			ag := int(a.Pix[i+1])
 			ab := int(a.Pix[i+2])
 			aa := int(a.Pix[i+3])
+			// 原图 每个 颜色
 			br := int(b.Pix[i])
 			bg := int(b.Pix[i+1])
 			bb := int(b.Pix[i+2])
 			ba := int(b.Pix[i+3])
+			// 混合 每个颜色
 			i += 4
 			dr := ar - br
 			dg := ag - bg
 			db := ab - bb
 			da := aa - ba
+			// 比较
 			total += uint64(dr*dr + dg*dg + db*db + da*da)
+			// 统计
 		}
 	}
-	return math.Sqrt(float64(total)/float64(w*h*4)) / 255
+	return math.Sqrt(float64(total)/float64(w*h*4)) / 255 // 评价每个颜色{4个数值平} 与 最大值 255 比例
 }
 
 ```
