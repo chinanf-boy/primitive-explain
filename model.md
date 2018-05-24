@@ -112,3 +112,16 @@ Go Graphics - 使用简单的API在Go中进行2D渲染。
 ```
 primitive-explain gg
 ```
+
+``` go
+// primitive-explain/examples/gg.go
+func UseGG() {
+	dc := gg.NewContext(1000, 1000)
+	dc.DrawCircle(500, 500, 400)
+	dc.SetRGB(0, 0, 0)
+	dc.Fill()
+	dc.SavePNG("out.png")
+}
+
+```
+
