@@ -47,14 +47,14 @@ func NewModel(target image.Image, background Color, size, numWorkers int) *Model
 	}
 
 	model := &Model{}
-	model.Sw = sw
-	model.Sh = sh
-	model.Scale = scale
-	model.Background = background
-	model.Target = imageToRGBA(target)
-	model.Current = uniformRGBA(target.Bounds(), background.NRGBA())
-	model.Score = differenceFull(model.Target, model.Current)
-	model.Context = model.newContext()
+	model.Sw = sw // 宽
+	model.Sh = sh // 高
+	model.Scale = scale // 比例
+	model.Background = background // 背景颜色
+	model.Target = imageToRGBA(target) // 获得个颜色
+	model.Current = uniformRGBA(target.Bounds(), background.NRGBA()) // 混合
+	model.Score = differenceFull(model.Target, model.Current) // 差多少
+	model.Context = model.newContext() // 拿到 画画 的形状
 	for i := 0; i < numWorkers; i++ {
 		worker := NewWorker(model.Target)
 		model.Workers = append(model.Workers, worker)

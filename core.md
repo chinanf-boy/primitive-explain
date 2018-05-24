@@ -2,6 +2,9 @@
 
 核心 
 
+`primitive/primitive/core.go`
+
+
 ### computeColor
 
 ``` go
