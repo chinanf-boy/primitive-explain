@@ -65,7 +65,7 @@ func AverageImageColor(im image.Image) color.NRGBA {
 
 ### imageToRGBA
 
-
+由图片变个颜色返回
 
 ``` go
 func imageToRGBA(src image.Image) *image.RGBA {
@@ -82,4 +82,16 @@ func imageToRGBA(src image.Image) *image.RGBA {
 	"image"
 	"image/draw"
 	
+```
+
+### uniformRGBA
+
+颜色换图片
+
+``` go
+func uniformRGBA(r image.Rectangle, c color.Color) *image.RGBA {
+	im := image.NewRGBA(r)
+	draw.Draw(im, im.Bounds(), &image.Uniform{c}, image.ZP, draw.Src)
+	return im
+}
 ```

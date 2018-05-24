@@ -292,6 +292,8 @@ func main() {
 
 #### 4.3 算法
 
+- [ ] [NewModel](./model.md#newmodel)
+
 
 
 ```go
