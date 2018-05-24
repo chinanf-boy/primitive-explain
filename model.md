@@ -110,7 +110,7 @@ func (model *Model) newContext() *gg.Context {
 Go Graphics - 使用简单的API在Go中进行2D渲染。
 
 ```
-primitive-explain gg
+go run main.go gg
 ```
 
 ``` go

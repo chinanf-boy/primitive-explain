@@ -84,6 +84,8 @@ func imageToRGBA(src image.Image) *image.RGBA {
 	
 ```
 
+> 试试 `go run main.go img2rgba`
+
 ### uniformRGBA
 
 颜色换图片

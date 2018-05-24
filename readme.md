@@ -141,7 +141,7 @@ func (i *shapeConfigArray) Set(value string) error {
 - [x] Set 
 
 ```
-primitive-explain -n 100
+go run main.go -n 100
 ```
 
 

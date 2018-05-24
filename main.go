@@ -6,7 +6,8 @@ import (
 	"image"
 	"os"
 	"strconv"
-	// "github.com/chinanf-boy/primitive-explain/examples"
+
+	"github.com/chinanf-boy/primitive-explain/examples"
 )
 
 var (
@@ -57,14 +58,20 @@ func init() {
 func main() {
 	flag.Parse()
 	exampleIndex := flag.Args()
+
 	if exampleIndex[0] == "gg" {
 		examples.UseGG()
 		fmt.Println("examples gg create new png {out.png}")
 		os.Exit(0)
 	}
 	if exampleIndex[0] == "img2rgba" {
-		input := loadImage("lenna.png")
-		fmt.Println(examples.ImageToRGBA(input))
+
+		input, _ := loadImage("lenna.png")
+
+		rgbas := examples.ImageToRGBA(input)
+
+		fmt.Println("so many RGBA", rgbas)
+		os.Exit(0)
 	}
 	for _, config := range Configs {
 		fmt.Println("new config", config)
